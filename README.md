@@ -86,7 +86,7 @@ Example:
 ### Add Libraries
 
 * Add include paths to `INCDIR` with `-I` prefix in `Makefile`.
-* Add a line to `compile_flags.txt` (for clangd LSP functionality).
+* Add lines to `compile_flags.txt` for clangd LSP functionality.
 
 Example:
 
