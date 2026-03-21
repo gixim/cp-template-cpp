@@ -52,6 +52,8 @@ The backup file `tmp/main.cc.bak` will not be removed.
 ### Change Compiler
 
 * Change `CC` in `Makefile`.
+* Change `compiler_path` in `c_cpp_properties.json`.
+* Change `command` in `tasks.json`.
 
 Example:
 
@@ -61,12 +63,26 @@ Example:
 + CC = clang++
 ```
 
+```diff
+// c_cpp_properties.json
+- "compilerPath": "/usr/bin/g++"
++ "compilerPath": "/usr/bin/clang++"
+```
+
+```diff
+// tasks.json
+- "command": "/usr/bin/g++"
++ "command": "/usr/bin/clang++"
+```
+
 ### Change Compile Flags
 
 For C++ version, optimization level, etc.
 
 * Change `CFLAGS` in `Makefile`.
 * Add lines to `compile_flags.txt` for clangd LSP functionality.
+* Change `cppStandard` in `c_cpp_properties.json`.
+* Add lines to `args` in `tasks.json`.
 
 Example:
 
@@ -83,10 +99,25 @@ Example:
 + -std=gnu++23
 ```
 
+```diff
+// c_cpp_properties.json
+- "cppStandard": "c++17"
++ "cppStandard": "gnu++23"
+```
+
+```diff
+// tasks.json
+  args": [
++     "-std=gnu++23",
+  ]
+```
+
 ### Add Libraries
 
 * Add include paths to `INCDIR` with `-I` prefix in `Makefile`.
 * Add lines to `compile_flags.txt` for clangd LSP functionality.
+* Add include paths to `includePath` in `c_cpp_properties.json`.
+* Add include paths to `args` in `tasks.json`.
 
 Example:
 
@@ -101,4 +132,20 @@ Example:
   -Wall
   -Wextra
 + -I/usr/local/include/ac-library
+```
+
+```diff
+// c_cpp_properties.json
+  "includePath": [
+-    "${workspaceFolder}/**"
++    "${workspaceFolder}/**",
++    "/usr/local/include/ac-library"
+  ],
+```
+
+```diff
+// tasks.json
+  "args": [
++     "-I/usr/local/include/ac-library",
+  ]
 ```
