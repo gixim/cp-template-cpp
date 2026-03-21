@@ -5,8 +5,12 @@
 * WSL Ubuntu
 * `make`
 * `clangd` for LSP
+* `clang-format`
 
 ## Environment Commands
+
+These commands are Windows-specific.
+You might want to replace these commands like `xclip`, `pbcopy`, or `pbpaste`.
 
 * `pwsh.exe`
     * Defined in `make run`
