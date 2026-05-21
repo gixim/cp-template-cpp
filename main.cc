@@ -8,7 +8,11 @@ int main(void) {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);
 
-    solve();
+    int t = 1;
+    // cin >> t;
+    while (t--) {
+        solve();
+    }
 
     return 0;
 }

@@ -25,6 +25,17 @@ You might want to replace these commands like `xclip`, `pbcopy`, or `pbpaste`.
 
 The starting point is the `void solve(void)` function in `main.cc`.
 
+### Multi Testcases
+
+Assumes the quantity of testcase is given at the very first, just remove the comment found in `main` function.
+Default quantity of testcase is 1 (single testcase).
+
+```diff
+// In `main()` in main.cc
+- // cin >> t
++ cin >> t
+```
+
 ### `make` Commands
 
 #### `make`
